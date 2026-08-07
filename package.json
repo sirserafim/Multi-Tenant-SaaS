@@ -1,0 +1,18 @@
+{
+  "name": "multi-tenant-saas",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=@multi-tenant-saas/web & npm run dev --workspace=@multi-tenant-saas/api",
+    "build": "npm run build --workspace=@multi-tenant-saas/web && npm run build --workspace=@multi-tenant-saas/api",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

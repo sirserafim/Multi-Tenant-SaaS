@@ -34,9 +34,10 @@ The interesting parts of this project are not the screens — they're the guaran
 ## Monorepo layout
 
 ```
-/apps/xperio-web        # Next.js frontend
-/apps/xperio-api        # Express telemetry API
+/apps/web               # Next.js 15 frontend (App Router)
+/apps/api               # Express telemetry API
 /packages/contracts     # Shared Zod schemas + inferred types (source-only, no build step)
+/supabase               # PostgreSQL migrations, RLS policies, seed (Phase 2)
 ```
 
 ## Roadmap
