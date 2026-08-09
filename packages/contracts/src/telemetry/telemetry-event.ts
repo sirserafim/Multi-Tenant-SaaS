@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { EngagementEventTypeSchema } from "../enums/engagement-event-type.js";
+import { TimestampSchema } from "../primitives.js";
 
 /**
  * POST /telemetry request body.
@@ -13,7 +14,7 @@ export const TelemetryEventSchema = z.object({
   /** Replay-safe deduplication key — enforced unique at the database layer. */
   idempotency_key: z.string().min(1).max(128),
   /** Client clock; server still records server-side timestamp for auditing. */
-  client_timestamp: z.string().datetime({ offset: true }).optional(),
+  client_timestamp: TimestampSchema.optional(),
   /** Non-indexed event context (dwell ms, viewport, etc.). */
   metadata: z.record(z.unknown()).optional(),
 });

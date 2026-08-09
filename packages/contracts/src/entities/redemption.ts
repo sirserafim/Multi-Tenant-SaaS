@@ -1,6 +1,5 @@
 import { z } from "zod";
-
-const TimestampSchema = z.string().datetime({ offset: true });
+import { TimestampSchema } from "../primitives.js";
 
 /**
  * Immutable record of a coupon scan at checkout.

@@ -1,6 +1,5 @@
 import { z } from "zod";
-
-const TimestampSchema = z.string().datetime({ offset: true });
+import { TimestampSchema } from "../primitives.js";
 
 /** Join row linking a tenant's curated shortlist to a listing, with display order. */
 export const TenantListingSchema = z.object({

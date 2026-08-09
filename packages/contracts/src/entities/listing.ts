@@ -1,8 +1,7 @@
 import { z } from "zod";
 import { ListingCategorySchema } from "../enums/listing-category.js";
 import { TierSchema } from "../enums/tier.js";
-
-const TimestampSchema = z.string().datetime({ offset: true });
+import { TimestampSchema } from "../primitives.js";
 
 /** Local business or experience listed on tenant shortlists. */
 export const ListingSchema = z.object({

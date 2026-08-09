@@ -1,12 +1,5 @@
 import { z } from "zod";
-
-const TimestampSchema = z.string().datetime({ offset: true });
-
-const SlugSchema = z
-  .string()
-  .min(1)
-  .max(64)
-  .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, "Slug must be lowercase kebab-case");
+import { SlugSchema, TimestampSchema } from "../primitives.js";
 
 /**
  * Tenant who curates a listing shortlist for guests.
