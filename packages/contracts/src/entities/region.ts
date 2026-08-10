@@ -1,6 +1,6 @@
 import { z } from "zod";
 import {
-  CentreSchema,
+  GeoPointSchema,
   IanaTimeZoneSchema,
   SlugSchema,
   TimestampSchema,
@@ -17,7 +17,7 @@ export const RegionSchema = z.object({
   time_zone: IanaTimeZoneSchema,
   /** When false, anon reads of this region are blocked by RLS. */
   published: z.boolean(),
-  centre: CentreSchema,
+  centre: GeoPointSchema,
   created_at: TimestampSchema,
 });
 

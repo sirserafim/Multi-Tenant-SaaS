@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { ListingCategorySchema } from "../enums/listing-category.js";
 import { TierSchema } from "../enums/tier.js";
-import { TimestampSchema } from "../primitives.js";
+import { GeoPointSchema, TimestampSchema } from "../primitives.js";
 
 /** Local business or experience listed on tenant shortlists. */
 export const ListingSchema = z.object({
@@ -14,10 +14,7 @@ export const ListingSchema = z.object({
   phone: z.string().max(32).nullable(),
   website_url: z.string().url().max(2048).nullable(),
   address: z.string().max(512).nullable(),
-  latitude: z.number().min(-90).max(90).nullable(),
-  longitude: z.number().min(-180).max(180).nullable(),
-  /** Coupon code shown to guests; scanned at checkout via redemption QR. */
-  coupon_code: z.string().min(1).max(64).nullable(),
+  location: GeoPointSchema.nullable(),
   is_published: z.boolean(),
   created_at: TimestampSchema,
 });

@@ -23,10 +23,10 @@ export const IanaTimeZoneSchema = z
     "Time zone must be an IANA identifier (e.g. Europe/Athens)",
   );
 
-/** Map centre point for a region. */
-export const CentreSchema = z.object({
+/** WGS-84 geographic point — shared by regions, tenants, and listings. */
+export const GeoPointSchema = z.object({
   lat: z.number().min(-90).max(90),
   lng: z.number().min(-180).max(180),
 });
 
-export type Centre = z.infer<typeof CentreSchema>;
+export type GeoPoint = z.infer<typeof GeoPointSchema>;
