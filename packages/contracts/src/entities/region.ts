@@ -16,7 +16,7 @@ export const RegionSchema = z.object({
     .regex(/^[A-Z]{2}$/, "Country code must be ISO 3166-1 alpha-2 uppercase"),
   time_zone: IanaTimeZoneSchema,
   /** When false, anon reads of this region are blocked by RLS. */
-  published: z.boolean(),
+  is_published: z.boolean(),
   centre: GeoPointSchema,
   created_at: TimestampSchema,
 });
