@@ -30,6 +30,8 @@ export {
   type EngagementEventType,
 } from "./enums/engagement-event-type.js";
 
+export { DeviceTypeSchema, type DeviceType } from "./enums/device-type.js";
+
 export { RegionSchema, type Region } from "./entities/region.js";
 export { TenantSchema, type Tenant } from "./entities/tenant.js";
 export { ListingSchema, type Listing } from "./entities/listing.js";
