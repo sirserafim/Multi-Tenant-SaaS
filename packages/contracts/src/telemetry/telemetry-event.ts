@@ -11,6 +11,8 @@ export const TelemetryEventSchema = z.object({
   tenant_id: z.string().uuid(),
   /** Required for listing-scoped events; omitted only for tenant-level signals. */
   listing_id: z.string().uuid().optional(),
+  /** Client-generated guest session — shared with redemptions / ledger attribution. */
+  session_id: z.string().uuid(),
   /** Replay-safe deduplication key — enforced unique at the database layer. */
   idempotency_key: z.string().min(1).max(128),
   /** Client clock; server still records server-side timestamp for auditing. */
