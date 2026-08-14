@@ -8,6 +8,12 @@ build/
 out/
 *.tsbuildinfo
 
+# packages/contracts is source-only (no build step) — ignore accidental tsc emit
+packages/contracts/src/**/*.js
+packages/contracts/src/**/*.d.ts
+packages/contracts/src/**/*.js.map
+packages/contracts/src/**/*.d.ts.map
+
 # environment variables (keep .env.example tracked)
 .env
 .env.*

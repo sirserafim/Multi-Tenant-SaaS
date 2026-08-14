@@ -2,7 +2,7 @@ import { z } from "zod";
 import { TimestampSchema } from "../primitives.js";
 
 /** Server-generated scannable coupon code — unique per redemption row. */
-const RedemptionCodeSchema = z
+export const RedemptionCodeSchema = z
   .string()
   .regex(
     /^[A-Z0-9-]{6,32}$/,
@@ -23,8 +23,8 @@ export const RedemptionSchema = z.object({
   code: RedemptionCodeSchema,
   /** Discount applied at checkout (0–100). */
   discount_pct: z.number().int().min(0).max(100),
-  /** Client-generated key for idempotent inserts under concurrent requests. */
-  idempotency_key: z.string().min(1).max(128),
+  /** Same client UUID as the telemetry event that created this redemption. */
+  idempotency_key: z.string().uuid(),
   redeemed_at: TimestampSchema,
 });
 

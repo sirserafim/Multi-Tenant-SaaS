@@ -40,6 +40,7 @@ export {
   type TenantListing,
 } from "./entities/tenant-listing.js";
 export {
+  RedemptionCodeSchema,
   RedemptionSchema,
   type Redemption,
 } from "./entities/redemption.js";

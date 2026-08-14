@@ -42,9 +42,9 @@ The interesting parts of this project are not the screens — they're the guaran
 
 ## Roadmap
 
-- [ ] **Phase 1** — Architecture, workspace config, shared Zod contracts
-- [ ] **Phase 2** — PostgreSQL schema, RLS policies, triggers, seed data
-- [ ] **Phase 3** — Express telemetry API (validation, transactions, anti-abuse)
+- [x] **Phase 1** — Architecture, workspace config, shared Zod contracts
+- [x] **Phase 2** — PostgreSQL schema, RLS policies, triggers, seed data
+- [x] **Phase 3** — Express telemetry API (validation, transactions, anti-abuse)
 - [ ] **Phase 4** — Next.js frontend (server components, accessible modal, telemetry)
 
 ## Author
